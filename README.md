@@ -20,7 +20,7 @@ CMD ["echo", "Hello World!"]
 To build the project run
 
 ```
-docker build -t my-container:latest .
+$ docker build -t my-container:latest .
 ```
 
 You should see some output to the screen like this.
@@ -34,7 +34,7 @@ This is the id for the container.
 Use this id to launch the container.
 
 ```
-docker run my-container-name
+$ docker run my-container-name
 ```
 
 You should see the text.
@@ -93,13 +93,13 @@ CMD ["app.py"]
 Run the command 
 
 ```
-docker build -t my-python-project
+$ docker build -t my-python-project
 ```
 
 and 
 
 ```
-docker run my-python-project
+$ docker run my-python-project
 ```
 
 ## Deploying to Heroku
@@ -107,19 +107,19 @@ docker run my-python-project
 Deploying to Heroku is a little different than the typical way.
 
 ```
-heroku login
+$ heroku login
 ```
 
 Push the container to Heroku using the command:
 
 ```
-heroku container:push web -a my-heroku-app-name
+$ heroku container:push web -a my-heroku-app-name
 ```
 
 After it's pushed and built on Heroku, it must be released. 
 
 ```
-heroku container:release web -a my-heroku-app-name
+$ heroku container:release web -a my-heroku-app-name
 ```
 
 ## Scale your App
@@ -128,13 +128,13 @@ Heroku will scale your app to 0 by default.
 Scale your app depending on your tier.
 
 ```
-heroku ps:scale web=1
+$ heroku ps:scale web=1
 ```
 
 View the working application by typing
 
 ```
-heroku open
+$ heroku open
 ```
 
 View this code in [production](http://simple-docker-app.herokuapp.com).
