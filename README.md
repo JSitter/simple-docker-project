@@ -136,3 +136,5 @@ View the working application by typing
 ```
 heroku open
 ```
+
+View this code in [production](http://simple-docker-app.herokuapp.com).
