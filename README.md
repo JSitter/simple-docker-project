@@ -69,7 +69,8 @@ class Index(Resource):
     return {"Who did it?": "Don't Ask"}
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8000)
+  PORT = int(os.environ.get('PORT', 8000))
+  app.run(host='0.0.0.0', port=PORT)
 ```
 
 Also in the project root should be a file named `requirements.txt` that contains these dependencies:
@@ -99,4 +100,39 @@ and
 
 ```
 docker run my-python-project
+```
+
+## Deploying to Heroku
+
+Deploying to Heroku is a little different than the typical way.
+
+```
+heroku login
+```
+
+Push the container to Heroku using the command:
+
+```
+heroku container:push web -a my-heroku-app-name
+```
+
+After it's pushed and built on Heroku, it must be released. 
+
+```
+heroku container:release web -a my-heroku-app-name
+```
+
+## Scale your App
+Heroku will scale your app to 0 by default.
+
+Scale your app depending on your tier.
+
+```
+heroku ps:scale web=1
+```
+
+View the working application by typing
+
+```
+heroku open
 ```
