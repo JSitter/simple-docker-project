@@ -45,9 +45,7 @@ Hello World!
 
 ## Create a Python Project
 
-Change the Dockerfile for Python
-
-Create the two required files
+Create these two required files.
 
 `app.py` should be in the project root directory and should contain this:
 
@@ -137,4 +135,4 @@ View the working application by typing
 $ heroku open
 ```
 
-View this code in [production](http://simple-docker-app.herokuapp.com).
+View this code in [a production environment](http://simple-docker-app.herokuapp.com).
