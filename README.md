@@ -136,3 +136,26 @@ $ heroku open
 ```
 
 View this code in [a production environment](http://simple-docker-app.herokuapp.com).
+
+## Create Database Image
+
+This example will use MySQL, but any other database could be used instead.
+
+```
+$ docker run --detach --name=my-db-name --env="MYSQL_ROOT_PASSWORD=environmentpasswor4d" mysql
+```
+
+You should get a container with a mysql instance running.
+
+Check out the details of the instance by running
+
+```
+$ docker inspect my-db-name
+```
+
+There is a great [medium article](https://medium.com/coderscorner/connecting-to-mysql-through-docker-997aa2c090cc) about the use of mysql with phpmyadmin using docker containers.
+
+## Add Heroku Compatible MySQL Support 
+
+Add `SQLAlchemy` requirement to the `requirment.txt` file.
+
