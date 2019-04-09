@@ -2,22 +2,22 @@
 
 First create a Dockerfile to tell Docker what to do.
 
-Inside project directory use the command
+Inside the project directory use the command:
 
 ```
 $ touch Dockerfile
 ```
 
-Using Alpine Linux allows us to start with a smaller instance.
+Alpine Linux allows us to start with a very small light weight linux distro.
 
-Inside the Docker file add the commands
+Inside the Docker file add the commands:
 
 ```
 FROM alpine
 CMD ["echo", "Hello World!"]
 ```
 
-To build the project run
+Build the project by running:
 
 ```
 $ docker build -t my-container:latest .
@@ -28,8 +28,6 @@ You should see some output to the screen like this.
 ```
 Successfully built ec6498e61d1a
 ```
-
-This is the id for the container.
 
 Use this id to launch the container.
 
@@ -88,6 +86,9 @@ RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["app.py"]
 ```
+
+This image is an Ubuntu system with python 3.6 installed
+
 Run the command
 
 ```
@@ -140,6 +141,12 @@ View the working application by typing
 ```
 $ heroku open
 ```
+
+If the application doesn't appear, make sure that the proper port is being exposed.
+
+Heroku uses an environment variable `PORT` which holds the value for the port to expose.
+
+Make sure your app is listening on this port.
 
 View this code in [a production environment](http://simple-docker-app.herokuapp.com).
 
