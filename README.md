@@ -102,7 +102,7 @@ $ docker run my-python-project
 
 ## Deploying to Heroku
 
-Deploying to Heroku is a little different than the typical way.
+Deploying a Docker project on Heroku is a little different than just pushing a generic flask app. Make sure you're logged into Heroku in the cli tool.
 
 ```
 $ heroku login
