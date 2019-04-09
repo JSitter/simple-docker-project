@@ -95,7 +95,7 @@ This container uses an Ubuntu system with python 3.6 already installed.
 Build and tag the container:
 
 ```
-$ docker build -t my-python-project
+$ docker build -t my-python-project .
 ```
 
 Run the container:
