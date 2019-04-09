@@ -12,7 +12,7 @@ Alpine Linux allows us to start with a very light weight linux distro.
 
 The Dockerfile contains all the commands we'll need to start up our application. Here is a demonstration of Hello World using an Alpine linux container.
 
-Inside the Docker file add these commands:
+Inside `Dockerfile` add these commands:
 
 ```
 FROM alpine
