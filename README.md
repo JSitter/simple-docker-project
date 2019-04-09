@@ -126,7 +126,7 @@ After it's pushed and built on Heroku, it must be released.
 $ heroku container:release web -a my-heroku-app-name
 ```
 
-## Scale your App
+### Scale your App
 Heroku will scale your app to 0 by default.
 
 Scale your app depending on your tier.
