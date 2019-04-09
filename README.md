@@ -101,7 +101,7 @@ $ docker build -t my-python-project .
 Run the container:
 
 ```
-$ docker run my-python-project
+$ docker run -d -p 8000:8000 my-python-project
 ```
 
 ## Deploying to Heroku
