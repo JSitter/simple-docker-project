@@ -169,11 +169,11 @@ Check out the details of the instance by running
 $ docker inspect my-db-name
 ```
 
-There is a great [medium article](https://medium.com/coderscorner/connecting-to-mysql-through-docker-997aa2c090cc) about the use of mysql with phpmyadmin using docker containers.
+There is a great [medium article](https://medium.com/coderscorner/connecting-to-mysql-through-docker-997aa2c090cc) about the use of mysql and phpmyadmin using docker containers. One caveat is that the newest version of MySQL may require an authorization that phpmyadmin does not understand. Therefore, it's a good idea to make sure that you specify compatible versions of the two pieces of software to avoid issues.
 
 ## Add Heroku Compatible MySQL Support
 
-Add dependencies to the `requirement.txt` file.
+Add dependencies to the `requirements.txt` file:
 
 ```
 SQLAlchemy
