@@ -8,9 +8,11 @@ Inside the project directory use the command:
 $ touch Dockerfile
 ```
 
-Alpine Linux allows us to start with a very small light weight linux distro.
+Alpine Linux allows us to start with a very light weight linux distro.
 
-Inside the Docker file add the commands:
+The Dockerfile contains all the commands we'll need to start up our application. Here is a demonstration of Hello World using an Alpine linux container.
+
+Inside the Docker file add these commands:
 
 ```
 FROM alpine
@@ -23,16 +25,17 @@ Build the project by running:
 $ docker build -t my-container:latest .
 ```
 
-You should see some output to the screen like this.
+You should see some output to the screen like this:
 
 ```
-Successfully built ec6498e61d1a
+Successfully built 3373beab55ed
+Successfully tagged my-container:latest
 ```
 
-Use this id to launch the container.
+Then simply launch the container.
 
 ```
-$ docker run my-container-name
+$ docker run my-container
 ```
 
 You should see the text.
@@ -69,14 +72,14 @@ if __name__ == '__main__':
   app.run(host='0.0.0.0', port=PORT)
 ```
 
-Also in the project root should be a file named `requirements.txt` that contains these dependencies:
+Also in the project root there should be a file named `requirements.txt`. This file contains a list of these dependencies:
 
 ```
 flask
 flask_restplus
 ```
 
-Replace the contents of Dockerfile with
+Then replace the contents of Dockerfile with:
 
 ```
 FROM python:3.6
@@ -87,15 +90,15 @@ ENTRYPOINT ["python"]
 CMD ["app.py"]
 ```
 
-This image is an Ubuntu system with python 3.6 installed
+This container uses an Ubuntu system with python 3.6 already installed.
 
-Run the command
+Build and tag the container:
 
 ```
 $ docker build -t my-python-project
 ```
 
-and
+Run the container:
 
 ```
 $ docker run my-python-project
@@ -128,9 +131,9 @@ $ heroku container:release web -a my-heroku-app-name
 ```
 
 ### Scale your App
-Heroku will scale your app to 0 by default.
+Heroku will scale your app to 0 by default and this won't work.
 
-Scale your app depending on your tier.
+Scale your app depending on your tier. This scales it for the free tier.
 
 ```
 $ heroku ps:scale web=1
@@ -146,11 +149,11 @@ If the application doesn't appear, make sure that the proper port is being expos
 
 Heroku uses an environment variable `PORT` which holds the value for the port to expose.
 
-Make sure your app is listening on this port.
+Make sure your app is listening on this port in order to accept incoming connections.
 
-View this code in [a production environment](http://simple-docker-app.herokuapp.com).
+View this code in [on Heroku](http://simple-docker-app.herokuapp.com).
 
-## Create Database Image
+## Use Docker to Run a Database
 
 This example will use MySQL, but any other database can be used instead.
 
