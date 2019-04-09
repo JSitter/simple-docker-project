@@ -88,13 +88,13 @@ RUN pip install -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["app.py"]
 ```
-Run the command 
+Run the command
 
 ```
 $ docker build -t my-python-project
 ```
 
-and 
+and
 
 ```
 $ docker run my-python-project
@@ -108,13 +108,19 @@ Deploying to Heroku is a little different than the typical way.
 $ heroku login
 ```
 
+After the login process for Heroku, you'll need to login to your container registry.
+
+```
+$ heroku container:login
+```
+
 Push the container to Heroku using the command:
 
 ```
 $ heroku container:push web -a my-heroku-app-name
 ```
 
-After it's pushed and built on Heroku, it must be released. 
+After it's pushed and built on Heroku, it must be released.
 
 ```
 $ heroku container:release web -a my-heroku-app-name
@@ -139,7 +145,7 @@ View this code in [a production environment](http://simple-docker-app.herokuapp.
 
 ## Create Database Image
 
-This example will use MySQL, but any other database could be used instead.
+This example will use MySQL, but any other database can be used instead.
 
 ```
 $ docker run --detach --name=my-db-name --env="MYSQL_ROOT_PASSWORD=environmentpasswor4d" mysql
@@ -155,7 +161,11 @@ $ docker inspect my-db-name
 
 There is a great [medium article](https://medium.com/coderscorner/connecting-to-mysql-through-docker-997aa2c090cc) about the use of mysql with phpmyadmin using docker containers.
 
-## Add Heroku Compatible MySQL Support 
+## Add Heroku Compatible MySQL Support
 
-Add `SQLAlchemy` requirement to the `requirment.txt` file.
+Add dependencies to the `requirement.txt` file.
 
+```
+SQLAlchemy
+flask-bcrypt
+```
